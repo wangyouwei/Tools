@@ -1,0 +1,34 @@
+\section alias alias - create a function
+
+\subsection alias-synopsis Synopsis
+\fish{synopsis}
+alias NAME DEFINITION
+alias NAME=DEFINITION
+\endfish
+
+\subsection alias-description Description
+
+`alias` is a simple wrapper for the `function` builtin. It exists for backwards compatibility with Posix shells. For other uses, it is recommended to define a <a href='#function'>function</a>.
+
+`fish` does not keep track of which functions have been defined using `alias`. They must be erased using `functions -e`.
+
+- `NAME` is the name of the alias
+
+- `DEFINITION` is the actual command to execute. The string `$argv` will be appended.
+
+You cannot create an alias to a function with the same name.
+
+
+\subsection alias-example Example
+
+The following code will create `rmi`, which runs `rm` with additional arguments on every invocation.
+
+\fish
+alias rmi "rm -i"
+
+# This is equivalent to entering the following function:
+
+function rmi
+    rm -i $argv
+end
+\endfish

@@ -1,0 +1,12 @@
+\section pwd pwd - output the current working directory
+
+\subsection pwd-synopsis Synopsis
+\fish{synopsis}
+pwd
+\endfish
+
+\subsection pwd-description Description
+
+`pwd` outputs (prints) the current working directory.
+
+Note that `fish` always resolves symbolic links in the current directory path.
